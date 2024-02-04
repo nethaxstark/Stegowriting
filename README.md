@@ -1,20 +1,30 @@
 # Stegowriting
 
 Stegowriting - Steganography Tool
+
 Overview
 Stegowriting is a steganography tool designed to hide text within images. This project is in its first version, and I plan to expand and enhance it with additional features in the future. It's an ideal project for college, providing a hands-on experience in the fascinating world of digital concealment.
 
-Features
+Features -
+
 Text Hiding: Conceal your messages within images seamlessly.
+
 User-Friendly: Simple and intuitive interface for easy use.
+
 Expandable: Future updates will introduce more features and improvements.
+
 How to Use
+
 Clone the repository to your local machine.
 
 bash
+
 Copy code
+
 git clone https://github.com/nethaxstark/Stegowriting/
+
 Run the Stegowriting application.
+
 It will run first you will need python.
 
 Select an image and hide your text within it.
@@ -25,8 +35,11 @@ Future Development
 I have exciting plans for the future of Stegowriting, including:
 
 Image-based encryption methods
+
 Enhanced user interface
+
 Support for additional file formats
+
 Feel free to contribute, report issues, or suggest features. Let's build Stegowriting together!
 
 Instagram - ajay_01.xx
