@@ -25,8 +25,8 @@ window.configure(bg="#000000")
 #I like the default icon.
 
 #Background image
-bakgroundimage=PhotoImage(file="A:\Coding\python\logo.png")
-Label(window,image=bakgroundimage,bg="#0000FF").place(x=10,y=0)
+#bakgroundimage=PhotoImage(file="A:\Coding\python\logo.png")
+#Label(window,image=bakgroundimage,bg="#0000FF").place(x=10,y=0)
 
 #smaller_image = logo.subsample(2,2)
 
