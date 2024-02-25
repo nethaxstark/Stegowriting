@@ -4,6 +4,7 @@ import tkinter as tk
 from PIL import Image, ImageTk
 import os
 from stegano import lsb
+import webbrowser
 
 # Creating the main Tkinter window
 window = tk.Tk()
@@ -63,7 +64,19 @@ def save():
     global secret  # Declare secret as a global variable
     secret.save("hidden.png")
 
-# ... rest of your code ...
+#Function for About Me!
+def aboutme():
+    global aboutdev
+    messagebox.showinfo('About Me!','I am a program developed by Ajay Kumar Chaudhary. I can hide text into the images and can also show the text hidden into the images. I am a college project on StegnoGraphy!')
+
+#Links to the Social Media
+def sociallinks():
+    url = "https://www.instagram.com/ajay_01.xx/"
+    webbrowser.open_new_tab(url)
+
+#Link Displayed
+
+# ... rest of the code ...
 
 # Create the label for the background image
 Label(window, text="Stegowriting", bg="#000000", fg="white", font="courier 25 bold").place(x=565, y=40)     #Main Header
@@ -117,33 +130,63 @@ Button(f4,text="Show Data",width=10,height=2,font="Courier 14 bold",command=show
 Label(f4,text="Any Image Format!",font="courier",bg="#2f4155",fg="yellow").place(x=165,y=20)
 
 #THIS IS FOR DETECTING THE eXIF dATA! ( PROJECT UNDER DEVELOPMENT )
-'''
+
 def detect_exif_data():
     image_path = filedialog.askopenfilename(initialdir="/", title="Select Image",
-                         s                    filetypes=(("Image files", "*.jpg;*.jpeg;*.png"), ("All files", "*.*")))
+                                            filetypes=(("Image files", "*.jpg;*.jpeg;*.png"), ("All files", "*.*")))
    
     if image_path:
         try:
             with Image.open(image_path) as img:
                 exif_data = img.getexif()
                 if exif_data:
-                    print("Full Exif Data: ")
-                    messagebox.showinfo('Exif Data',exif_data)
+                    messagebox.showinfo('Exif Data Full Exif Data :', exif_data)
+                    
+
                 else:
-                    print("No Exif Data Found.")
+                    messagebox.showwarning('Exif Data','Exif Data Not Found!')
+                    
         except Exception as e:
             print(f"Error:{e}")
-'''
+
 
 
 
 #def detect_exif_button_click():
-#    detect_exif_data()
+ #   detect_exif_data()
 
 #detect_exif_button = Button(window,text="Detect Exif Data",command=detect_exif_button_click)
 #detect_exif_button.pack()
 
+#Creating menubar
 
+menubar = Menu(window)
+
+#Adding file menu and commands.
+
+file = Menu(menubar,tearoff = 0)
+menubar.add_cascade(label = 'File Menu', menu = file )
+file.add_command(label = 'Open Image', command = showimage )
+file.add_command(label='Save Image', command= save)
+file.add_separator()
+file.add_command(label='Exit',command=window.destroy)
+
+#Adding Detect Exif Option
+
+file = Menu(menubar,tearoff=0)
+menubar.add_cascade(label='Detect Exif Data',menu = file )
+file.add_command(label='Detect Exif', command= detect_exif_data)
+#file.add_command(label='')
+
+
+#Adding About me section
+
+file = Menu(menubar,tearoff=0)
+menubar.add_cascade(label='About',menu = file )
+file.add_command(label= ' About Me',command=aboutme)
+file.add_command(label='Instagram',command=sociallinks)
+
+window.config(menu = menubar)
 window.mainloop()
 
 
