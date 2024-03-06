@@ -18,7 +18,7 @@ window.resizable(YES, YES)
 window.configure(bg="#000000")
 
 # Load the background image
-bakgroundimage = PhotoImage(file="A:\Coding\python\College_project/bgimage.png")
+bakgroundimage = PhotoImage(file="")
 Label(window, image=bakgroundimage, bg="#0000FF").place(x=0, y=0)
 
 # Resize the background image
